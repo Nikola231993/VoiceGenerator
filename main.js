@@ -186,7 +186,6 @@ function changeSpeaker(in_text, in_val, in_txt) {
 
 appAngular.controller('textRedact', function($scope) {
   $scope.textInto = "";
-  $scope.textOutput = "";
   $scope.textRegex = "";
   $scope.textForMaxInt = "1";
   $scope.m_isObrab = false;
@@ -207,12 +206,6 @@ appAngular.controller('textRedact', function($scope) {
   var m_indexBlock = 0;
   var m_indexLoadFile = 0;
 
-  console.log("textRedact - working!");
-
-  $scope.clearOutputText = function() {
-    $scope.textOutput = "";
-  }
-
   $scope.reverseObrabot = function() {
 
     if ($scope.m_isObrab)
@@ -231,7 +224,6 @@ appAngular.controller('textRedact', function($scope) {
     }
     else
     {
-      $scope.textOutput = obrab($scope.textInto);
       m_stopButton.innerText = "Обрабатывать нечего";
     }
   }
@@ -469,6 +461,5 @@ $scope.goToParse = function() {
           textOut += numTextStr + ') ' + textStr + '\r\n\r\n';
       }
     }
-    $scope.textOutput = textOut;
   }
 });
