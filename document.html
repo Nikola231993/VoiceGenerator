@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html ng-app="myTestApplication">
+
+<head>
+  <title>Синтезатор текста</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Access-Control-Allow-Origin" content="*" />
+  <meta name="Access-Control-Allow-Headers" content="*" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/stylepromer.css" type="text/css" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body ng-controller="textRedact" class="bodyBackground">
+  <br>
+  <h2 id="m_infotext1" align="center">Здесь просто текст</h2>
+  <div class="content blockAliceBlue" align="center">
+    <h3 id="m_infotext2">Текстовое представление</h3>
+    <textarea id="m_output" align="center" ng-model="textInto"></textarea>
+  </div>
+  <div id="m_border" class="wrapper">
+    <br />
+    <div id="m_border2" style="width: 93%; border: 1px solid #666; margin: 0 auto;">
+      <!-- Выводим проценты -->
+      <center class="percenttext" id="interest">
+        0 %
+      </center>
+      <!-- Выводим полосу прогресса -->
+      <img id="progress" style="width: 0%; height: 50px;" src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/prograss.jpg">
+    </div>
+  </div>
+  <br>
+  <div class="content" align="center">
+    <label>Голос
+        <select class="form-control" id="smpl_sel_name">
+            <option name="smpl_voice" lang="*" value="zombie">Zombie</option>
+            <option name="smpl_voice" lang="*" value="zahar">Zahar</option>
+            <option name="smpl_voice" lang="*" value="kolya">Kolya</option>
+            <option name="smpl_voice" lang="*" value="kostya">Kostya</option>
+            <option name="smpl_voice" lang="*" value="nick">Nick</option>
+            <option name="smpl_voice" lang="*" value="erkanyavas">Erkanyavas</option>
+            <option name="smpl_voice" lang="*" value="zhenya">Zhenya</option>
+            <option name="smpl_voice" lang="*" value="anton_samokhvalov">Samokhvalov</option>
+            <option name="smpl_voice" lang="*" value="robot">Робот Захар</option>
+            <option name="smpl_voice" lang="*" value="dude">Dude</option>
+            <option name="smpl_voice" lang="*" value="silaerkan">Silaerkan</option>
+            <option name="smpl_voice" lang="*" value="oksana">Oksana</option>
+            <option name="smpl_voice" lang="*" value="jane">Jane</option>
+            <option name="smpl_voice" lang="*" value="omazh">Mozhara</option>
+            <option name="smpl_voice" lang="*" value="nastya">Nastya</option>
+            <option name="smpl_voice" lang="*" value="sasha">Sasha</option>
+            <option name="smpl_voice" lang="*" value="tanya">Tanya</option>
+            <option name="smpl_voice" lang="*" value="tatyana_abramova">Abramova</option>
+            <option name="smpl_voice" lang="*" value="voicesearch">VoiceSearch</option>
+            <option name="smpl_voice" lang="*" value="alyss">Alyss</option>
+            <option name="smpl_voice" lang="*" value="levitan">Levitan</option>
+            <option name="smpl_voice" lang="*" value="smoky">Smoky</option>
+      </select>
+</label>
+    <label>Эмоция
+        <select class="form-control" id="smpl_sel_emotion">
+            <option name="smpl_emotion" value="" selected="true">По умолчанию</option>
+            <option name="smpl_emotion" value="neutral">Нейтральная</option>
+            <option name="smpl_emotion" value="good">Добрая</option>
+            <option name="smpl_emotion" value="evil">Злая</option>
+        </select>
+    </label>
+<label>Язык
+  <select class="form-control" id="smpl_sel_lang">
+    <option name="smpl_lang" selected="true" value="ru-RU">Русский</option>
+    <option name="smpl_lang" value="en-US">Английский</option>
+    <option name="smpl_lang" value="uk-UA">Украинский</option>
+    <option name="smpl_lang" value="tr-TR">Турецкий</option>
+  </select>
+</label>
+    <button align="right" class="greenButton" ng-click="redactText(0)">Синтезировать текст</button>
+    <audio ng-model="m_videoNg" id="m_video"></audio>
+    <br><button align="right" class="purpleButton" ng-click="clearOutputText()">Убрать текст снизу</button>
+    <button id="m_stopButton" align="right" class="purpleButton" ng-click="reverseObrabot()">Просто кнопка</button>
+    <button id="m_showObrabotButton" align="right" class="purpleButton" ng-click="showObrabot()">Показать обработанный текст</button>
+  </div>
+  <div class="content" align="center">
+    <label title="Регулярка: "><span class="bigtext">Путь к файлу: </span></label>
+    <input id="m_textRegex" type="text" ng-model="textRegex">
+  </div>
+  <br>
+  <div class="content" align="center">
+    <label title="Скорость: "><span class="bigtext">Скорость: </span></label>
+    <input id="m_textSpeed" type="text" ng-model="textSpeed">
+  </div>
+  <br>
+  <div class="content blockAliceBlue" align="center">
+    <h3>Логовые сообщения</h3>
+    <textarea id="m_log" align="center" ng-model="textOutput"></textarea>
+  </div>
+  <!-- directive : floor -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS http://192.168.1.74:3012/ -->
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

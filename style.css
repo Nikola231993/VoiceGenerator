@@ -1,0 +1,155 @@
+.bodyBackground {
+    background-color: lightblue;
+}
+
+.boldTextForStatistics{
+  color: darkblue;
+  font-size: 120%;
+  font-weight: bold;
+  position: static;
+}
+
+.greenButton{
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+color: #fff;
+width:auto;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+padding: 8px 16px;
+margin: 10px 0px 0px 0px;
+text-decoration: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: background-color 0.1s linear;
+-moz-transition: background-color 0.1s linear;
+-o-transition: background-color 0.1s linear;
+transition: background-color 0.1s linear;
+}
+.greenButton {
+background-color: rgb( 43, 153, 91 );
+border: 1px solid rgb( 33, 126, 74 );
+}
+
+.purpleButton{
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+color: rgb( 126, 30, 74 );
+width:auto;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+padding: 8px 16px;
+margin: 10px 10px 10px 10px;
+text-decoration: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: background-color 0.1s linear;
+-moz-transition: background-color 0.1s linear;
+-o-transition: background-color 0.1s linear;
+transition: background-color 0.1s linear;
+}
+.purpleButton {
+background-color: rgb( 200, 90, 153 );
+border: 1px solid rgb( 126, 30, 74 );
+align-items: center;
+align-self: center;
+text-align: center;
+margin: 10px 0px 0px 10px;
+}
+
+.bigtext{
+  font-size: 120%;
+  font-weight: bold;
+  /* color: maroon; /* Цвет текста */
+}
+
+.percenttext{
+  font-size: 120%;
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  margin: 15px;
+  position: absolute;
+}
+
+/* style="color: #666; position: absolute; margin: 15px 0 0 235px;" */
+
+.block{
+  background: #fc0; /* Цвет фона */
+  border: 2px solid #000; /* Чёрная рамка */
+  border-radius: 5px; /* Радиус скругления */
+  margin: 10px;
+  align-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 7px;
+  min-width: inherit;
+  max-width: 70%;
+}
+
+.blockAliceBlue{
+  background: AliceBlue; /* Цвет фона */
+  border: 2px solid #000; /* Чёрная рамка */
+  border-radius: 5px; /* Радиус скругления */
+  margin: 10px;
+  text-align: center;
+  padding: 15px;
+  min-width: inherit;
+  width: 95%;
+}
+
+textarea{
+  border: 2px solid red;
+  border-radius: 4px;
+  font-size: 170%;
+  margin: 20px;
+  padding: 10px;
+  align-content: stretch;
+  align-self: stretch;
+  align-items: stretch;
+  width: 100%;
+  height: 200px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+}
+
+input[type=text] {
+    border: 2px solid red;
+    width: 50%;
+    border-radius: 4px;
+    font-size: 170%;
+    margin: 20px;
+    padding: 10px;
+}
+
+p{
+  font-size: 150%;
+  font-weight: lighter;
+  color: darkBlue;
+}
+
+.wrapper{
+		width: 95%;
+		height: 100px;
+		margin: 10px auto;
+		background: rgb(100, 100, 100);
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+	}

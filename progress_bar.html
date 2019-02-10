@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf8'>
+<link rel="stylesheet" href="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/stylepromer.css" type="text/css" />
+<title>Прогресс бар на javascript - Seo блог sergey-oganesyan.ru</title>
+<style type="text/css">
+
+	.wrapper{
+		width: 570px;
+		height: 150px;
+		margin: 10px auto;
+		background: #fff;
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+	}
+
+</style>
+
+<script type="text/javascript">
+
+	window.interest = 0;
+
+		//Увеличиваем процент и растягиваем полосу прогресса
+	function go(){
+				//Пока не 100% увеличиваем процент
+		if(interest != 100) {
+			interest++;
+			document.getElementById('interest').innerHTML = interest + ' %';
+			document.getElementById('progress').style.width = interest * 5 + 'px';
+		}
+		else{
+			document.getElementById('interest').innerHTML = 'Загрузка завершена';
+			document.getElementById('interest').style.margin = '15px 0 0 186px';
+		}
+	}
+
+</script>
+
+</head>
+<body onload="setting()">
+		<div class="wrapper">
+			<center>
+				<script type="text/javascript"> var curent_url = document.URL;
+					document.write("<a class='myButton' href='" + curent_url + "'>Сбросить</a>"); </script>
+				<button style="margin-top: 15px;" class="myButton" onclick="setInterval(go, 1000)">1000 мс</button>
+				<button style="margin-top: 15px;" class="myButton" onclick="setInterval(go, 100)">100 мс</button>
+				<button style="margin-top: 15px;" class="myButton" onclick="setInterval(go, 10)">10 мс</button>
+				<button style="margin-top: 15px;" class="myButton" onclick="setInterval(go, 1)">1 мс</button>
+			</center>
+
+			<br />
+			<div style="width: 1000px; border: 1px solid #666; margin: 0 auto;">
+						<!-- Выводим проценты -->
+				<center style="color: #666; position: absolute; margin: 15px 0 0 235px;" id="interest">
+					0 %
+				</center>
+						<!-- Выводим полосу прогресса -->
+				<img id="progress" style="width: 100; height: 50px;" src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/prograss.jpg">
+			</div>
+		</div>
+
+		<center><br>
+			<a href="http://sergey-oganesyan.ru/javascript-s-primerami/progress_bar_javascript.html" class="myButton">Вернуться к статье</a>
+			<a class="myButton" href="http://sergey-oganesyan.ru/">sergey-oganesyan.ru</a>
+		</center>
+</body>
+</html>
